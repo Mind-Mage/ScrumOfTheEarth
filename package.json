@@ -1,0 +1,15 @@
+{
+  "name": "characterdatabase",
+  "version": "1.0.0",
+  "description": "database filled with characters",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "scrumoftheearth"
+  },
+  "author": "",
+  "license": "ISC"
+}
