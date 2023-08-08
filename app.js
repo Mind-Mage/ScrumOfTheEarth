@@ -3,7 +3,6 @@ const session = require('express-session')
 const cookieParser = require('cookie-parser')
 const bcrypt = require('bcrypt')
 const port = 3000
-
 app = express()
 app.set("view engine", "pug")
 app.use(express.static('public'))
