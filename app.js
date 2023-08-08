@@ -2,10 +2,10 @@ const express = require('express')
 const session = require('express-session')
 const cookieParser = require('cookie-parser')
 const bcrypt = require('bcrypt')
+const ejs = require('ejs')
 const port = 3000
 app = express()
 app.set("view engine", "pug")
-app.set('view engine', 'ejs');
 app.use(express.static('public'))
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
