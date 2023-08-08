@@ -1,0 +1,19 @@
+#charForm {
+    background-color: black;
+    padding: auto;
+}
+
+.input {
+    height: 20px;
+    width: 60px;
+}
+
+#file {
+    height: 20px;
+    width: 60px;
+}
+
+#submit {
+    height: 20px;
+    width: 60px;
+}
