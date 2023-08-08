@@ -5,6 +5,7 @@ const bcrypt = require('bcrypt')
 const port = 3000
 app = express()
 app.set("view engine", "pug")
+app.set('view engine', 'ejs');
 app.use(express.static('public'))
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
@@ -13,7 +14,7 @@ app.use(session(sessionConfig))
 app.use(cookieParser())
 
 app.get('/', (req,res) =>{
-    res.render('login')
+    res.render('home.html')
 })
 
 app.get('/login', (req,res) =>{
