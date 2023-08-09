@@ -13,14 +13,29 @@ app.use(session(sessionConfig))
 app.use(cookieParser())
 
 app.get('/', (req,res) =>{
-    res.render('login')
+    let model = {
+        user: false //change this later with sessions, cookies, and stuff
+    }
+    res.render('home', model)
 })
 
 app.get('/login', (req,res) =>{
-    res.render('login')
+    let model = {
+        user: false //change this later with sessions, cookies, and stuff
+    }
+    res.render('login', model)
 })
 app.get('/register', (req,res) =>{
-    res.render('register')
+    let model = {
+        user: false //change this later with sessions, cookies, and stuff
+    }
+    res.render('register',model)
+})
+app.get('/character', (req,res) =>{
+    let model = {
+        user: false //change this later with sessions, cookies, and stuff
+    }
+    res.render('createChar',model)
 })
 
 app.get('/createChar', (req,res) =>{
