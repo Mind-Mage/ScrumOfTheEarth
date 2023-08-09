@@ -23,6 +23,14 @@ app.get('/register', (req,res) =>{
     res.render('register')
 })
 
+app.get('/createChar', (req,res) =>{
+    res.render('createChar')
+})
+
+app.post('/generateCharacter', (req, res) =>{
+    res.end("Character Added!");
+})
+
 app.listen(port, () => {
     console.log("Listening: " + port)
 })
