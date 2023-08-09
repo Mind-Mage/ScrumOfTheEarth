@@ -1,0 +1,26 @@
+body{
+    background-color: white;
+    color: rgb(35,31,32);
+    text-align: center;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+}
+
+.input {
+    height: 20px;
+    width: 200px;
+    text-align: center;
+}
+
+#file {
+    height: 20px;
+    width: 200px;
+}
+
+#submit {
+    height: 20px;
+    width: 100px;
+}

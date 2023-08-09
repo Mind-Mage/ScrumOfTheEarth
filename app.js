@@ -38,6 +38,14 @@ app.get('/character', (req,res) =>{
     res.render('createChar',model)
 })
 
+app.get('/createChar', (req,res) =>{
+    res.render('createChar')
+})
+
+app.post('/generateCharacter', (req, res) =>{
+    res.end("Character Added!");
+})
+
 app.listen(port, () => {
     console.log("Listening: " + port)
 })
