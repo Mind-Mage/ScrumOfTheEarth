@@ -1,16 +1,16 @@
-//- extends layout
+extends layout
 
-//- block layout-content
-head 
-    link(rel="stylesheet", href="css/createChar.css")
-h1 Add A Character 
-form(action="/generateCharacter", method="POST", id="charForm")
-    input(class="input", type="text", name="charaterName", placeholder="Charater Name")
-    br
-    input(class="input", type="text", name="specialSkill", placeholder="Special Skill")
-    br
-    input(class="input", type="text", name="gameName", placeholder="Name of Game")
-    br
-    input(id="file", type="file", name="pictureUpload")
-    br
-    input(id="submit", type="submit", name="submit", value="Add")
+block layout-content
+    head 
+        link(rel="stylesheet", href="css/createChar.css")
+    h1 Add A Character 
+    form(action="/generateCharacter", method="POST", id="charForm")
+        input(class="input", type="text", name="charaterName", placeholder="Charater Name")
+        br
+        input(class="input", type="text", name="specialSkill", placeholder="Special Skill")
+        br
+        input(class="input", type="text", name="gameName", placeholder="Name of Game")
+        br
+        input(id="file", type="file", name="pictureUpload")
+        br
+        input(id="submit", type="submit", name="submit", value="Add")
