@@ -2,11 +2,9 @@ const express = require('express')
 const session = require('express-session')
 const cookieParser = require('cookie-parser')
 const bcrypt = require('bcrypt')
-const ejs = require('ejs')
 const port = 3000
 app = express()
 app.set("view engine", "pug")
-//app.set("view engine", "ejs")
 app.use(express.static('public'))
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
@@ -15,17 +13,29 @@ app.use(session(sessionConfig))
 app.use(cookieParser())
 
 app.get('/', (req,res) =>{
-    res.render('home')
+    let model = {
+        user: false //change this later with sessions, cookies, and stuff
+    }
+    res.render('home', model)
 })
 
 app.get('/login', (req,res) =>{
-    res.render('login')
+    let model = {
+        user: false //change this later with sessions, cookies, and stuff
+    }
+    res.render('login', model)
 })
 app.get('/register', (req,res) =>{
-    res.render('register')
+    let model = {
+        user: false //change this later with sessions, cookies, and stuff
+    }
+    res.render('register',model)
 })
 app.get('/character', (req,res) =>{
-    res.render('createChar')
+    let model = {
+        user: false //change this later with sessions, cookies, and stuff
+    }
+    res.render('createChar',model)
 })
 
 app.listen(port, () => {
