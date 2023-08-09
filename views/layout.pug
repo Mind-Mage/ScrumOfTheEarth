@@ -3,12 +3,14 @@ html
         title Game Character Database 
         link(rel='stylesheet' href='css/style.css')
     body 
-        header
+        header(class="headerzk")
             nav
                 a(href='/') Home Page
-                a(href='/login') Login Page
-                a(href='/register') Register Page
+                if (user == true)
+                    a(href='/login') Login Page
+                else
+                    a(href='/register') Register Page
                 a(href='/character') Characters Page
         section
             block layout-content
-        footer ScrummyPeople 2023©
+        footer(class="footerzk") ScrummyPeople 2023©
