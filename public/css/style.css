@@ -1,4 +1,4 @@
-.footerzk{
+.footerzk{/*holder for presentation*/
     background-color: whitesmoke;
     border-radius: 20px;
     display: block;
@@ -6,7 +6,16 @@
     text-align: center;
     margin: 10% 15% 0% 15%;
 }
-.headerzk{
+.box{/*holder for presentation*/
+    background-color: whitesmoke;
+    border-radius: 20px;
+    display: block;
+    border: solid;
+    text-align: center;
+    padding: .5%;
+    margin: 0% 15% 15% 15%;
+}
+.headerzk{/*holder for presentation*/
     background-color: whitesmoke;
     border-radius: 20px;
     display: block;
@@ -14,24 +23,22 @@
     text-align: center;
     margin: 0% 15% 15% 15%;
 }
+a{
+    background-color: whitesmoke;
+    border-radius: 20px;
+    border: solid;
+    text-align: center;
+    margin: .5%;
+    padding: .1%;
+}
 .a{ /*delete this if you want to change it, this is just holder stuff for now*/
     /*background-color: whitesmoke;*/
     /*border-radius: 20px;
     border: solid;*/
     text-align: center;
-    padding: .5%;
+    padding: 5%;
     margin: 2%;
 }
-.membership{
-    background-color: whitesmoke;
-    border-radius: 20px;
-    opacity: 95%;
-    display: block;
-    border: solid;
-    text-align: center;
-    margin: 10% 20% 25% 20%;
-    padding: .5% .5% .5% .5%;
-}
-.error{
+.error{ /*Making error message red*/
     color: red;
 }
