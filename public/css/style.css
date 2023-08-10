@@ -32,3 +32,6 @@ a{ /*delete this if you want to change it, this is just holder stuff for now*/
     margin: 10% 20% 25% 20%;
     padding: .5% .5% .5% .5%;
 }
+.error{
+    color: red;
+}

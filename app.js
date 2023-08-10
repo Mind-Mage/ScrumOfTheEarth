@@ -26,7 +26,10 @@ app.get('/login', (req,res) =>{
     res.render('login', model)
 })
 app.post('/login', (req,res) =>{
-    res.redner('login', model)//start of post for login
+    let model = {
+        user: true
+    }
+    res.render('login', model)//start of post for login
 })
 app.get('/register', (req,res) =>{
     let model = {
@@ -38,13 +41,12 @@ app.post('/register',(req,res) =>{
     let creation = false
     if(!creation){
         let model = {
-            error: 'Username has been taken'
+            error: "Username has been taken(not actually, this hasn't been implemented yet)"
         }
         res.render('register', model)
     }else{
         res.redirect('/login')
     }
-    res.render('register', model)//start of post for register
 })
 app.get('/character', (req,res) =>{
     let model = {
