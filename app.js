@@ -25,11 +25,26 @@ app.get('/login', (req,res) =>{
     }
     res.render('login', model)
 })
+app.post('/login', (req,res) =>{
+    res.redner('login', model)//start of post for login
+})
 app.get('/register', (req,res) =>{
     let model = {
         user: false //change this later with sessions, cookies, and stuff
     }
     res.render('register',model)
+})
+app.post('/register',(req,res) =>{
+    let creation = false
+    if(!creation){
+        let model = {
+            error: 'Username has been taken'
+        }
+        res.render('register', model)
+    }else{
+        res.redirect('/login')
+    }
+    res.render('register', model)//start of post for register
 })
 app.get('/character', (req,res) =>{
     let model = {
@@ -44,6 +59,10 @@ app.get('/createChar', (req,res) =>{
 
 app.post('/generateCharacter', (req, res) =>{
     res.end("Character Added!");
+})
+app.get('/logout', (req,res) =>{
+    req.session.destroy()
+    res.redirect('/login')
 })
 
 app.listen(port, () => {
