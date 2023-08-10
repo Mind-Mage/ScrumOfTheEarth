@@ -14,10 +14,10 @@
     text-align: center;
     margin: 0% 15% 15% 15%;
 }
-a{ /*delete this if you want to change it, this is just holder stuff for now*/
-    background-color: whitesmoke;
-    border-radius: 20px;
-    border: solid;
+.a{ /*delete this if you want to change it, this is just holder stuff for now*/
+    /*background-color: whitesmoke;*/
+    /*border-radius: 20px;
+    border: solid;*/
     text-align: center;
     padding: .5%;
     margin: 2%;
