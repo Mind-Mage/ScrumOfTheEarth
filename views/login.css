@@ -1,8 +1,8 @@
 body{
-    background-color: #e1640bdd;
+    background-color: #a32020;
     font-family: 'Games', sans-serif;
     font-size: 16px;
-    color: #8e0707;
+    color: #c7833bdd;
     margin: 0;
     padding: 0;
 }
@@ -14,8 +14,8 @@ li a{
 }
 
 li a:hover{
-    background-color: #8e0707;
-    color: #e1640bdd;
+    background-color: #a32020;
+    color: #c7833bdd;
 }
 
 ul{
@@ -23,5 +23,5 @@ ul{
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #e1640bdd;
+    background-color: #b83012dd;
 }
