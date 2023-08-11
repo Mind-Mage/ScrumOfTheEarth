@@ -60,7 +60,10 @@ app.get('/createChar', (req,res) =>{
 })
 
 app.post('/generateCharacter', (req, res) =>{
-    res.end("Character Added!");
+    res.redirect('/');
+    console.log("Your Character was added!");
+    // add an if statement later so that if the character is already in the database it redirects
+    // them to the createChar page to add another character
 })
 app.get('/logout', (req,res) =>{
     req.session.destroy()
