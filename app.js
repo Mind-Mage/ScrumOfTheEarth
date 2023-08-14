@@ -1,5 +1,7 @@
 const express = require('express')
 const session = require('express-session')
+const {daluser} = require('./dal/DALUser')
+const {dalcharacter} = require('./dal/DALCharacter')
 const cookieParser = require('cookie-parser')
 const bcrypt = require('bcrypt')
 const port = 3000
@@ -32,16 +34,15 @@ app.post('/login', (req,res) =>{
     res.render('login', model)//start of post for login
 })
 app.get('/register', (req,res) =>{
-    let model = {
-        user: false //change this later with sessions, cookies, and stuff
-    }
-    res.render('register',model)
+    res.render('register')
 })
-app.post('/register',(req,res) =>{
-    let creation = false
-    if(!creation){
+app.post('/register', async (req,res) =>{
+    let username = req.body.username
+    let password = req.body.password
+    let confirmation = await daluser.register(username, password)
+    if(!confirmation){
         let model = {
-            error: "Username has been taken(not actually, this hasn't been implemented yet)"
+            error: "Username has been taken"
         }
         res.render('register', model)
     }else{
