@@ -1,5 +1,6 @@
 const express = require('express')
 const session = require('express-session')
+const {daluser} = require('./dal/DALUser')
 const cookieParser = require('cookie-parser')
 const bcrypt = require('bcrypt')
 const port = 3000
@@ -12,10 +13,11 @@ let sessionConfig = {secret:'gamer',cookie:{}}
 app.use(session(sessionConfig))
 app.use(cookieParser())
 
-app.get('/', (req,res) =>{
+app.get('/', async (req,res) =>{
     let model = {
         user: false //change this later with sessions, cookies, and stuff
     }
+    let guy = await daluser.register("Rodrick", 123123)
     res.render('home', model)
 })
 
