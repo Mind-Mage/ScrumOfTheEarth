@@ -13,11 +13,10 @@ let sessionConfig = {secret:'gamer',cookie:{}}
 app.use(session(sessionConfig))
 app.use(cookieParser())
 
-app.get('/', async (req,res) =>{
+app.get('/', (req,res) =>{
     let model = {
         user: false //change this later with sessions, cookies, and stuff
     }
-    let guy = await daluser.register("Rodrick", 123123)
     res.render('home', model)
 })
 
@@ -34,16 +33,15 @@ app.post('/login', (req,res) =>{
     res.render('login', model)//start of post for login
 })
 app.get('/register', (req,res) =>{
-    let model = {
-        user: false //change this later with sessions, cookies, and stuff
-    }
-    res.render('register',model)
+    res.render('register')
 })
-app.post('/register',(req,res) =>{
-    let creation = false
-    if(!creation){
+app.post('/register', async (req,res) =>{
+    let username = req.body.username
+    let password = req.body.password
+    let confirmation = await daluser.register(username, password)
+    if(!confirmation){
         let model = {
-            error: "Username has been taken(not actually, this hasn't been implemented yet)"
+            error: "Username has been taken"
         }
         res.render('register', model)
     }else{

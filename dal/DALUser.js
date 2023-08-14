@@ -18,10 +18,19 @@ function addUser(username, password){
     userCollection.create({username: username, password: password})
 }
 
+async function findAll(){
+    return await userCollection.find({}).exec()
+}
 
 
-exports.dal = {
+exports.daluser = {
     register: async (username, password) =>{
+        userList = await findAll()
+        for(let i = 0; i < userList.length; i++){
+            if (userList[i].username === username){
+                return null
+            }
+        }
         addUser(username, password)
         return 1
     }
