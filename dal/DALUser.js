@@ -1,5 +1,5 @@
 const{mongoose, Schema} = require('mongoose')
-const connectionString = "mongodb://127.0.0.1:27017/VideoGameCharacters"
+const connectionString = "mongodb+srv://lvirrey:Nc210859027@toonzk.0byxsso.mongodb.net/VideoGameCharacterDatabase"//THIS
 mongoose.connect(connectionString,{useUnifiedTopology: true, useNewUrlParser: true})
 const connection = mongoose.connection
 connection.once('open', () =>{
@@ -21,6 +21,8 @@ function addUser(username, password){
 async function findAll(){
     return await userCollection.find({}).exec()
 }
+
+//NEEDS MORE STUFF, i think?
 
 
 exports.daluser = {

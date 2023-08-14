@@ -1,6 +1,7 @@
 const express = require('express')
 const session = require('express-session')
 const {daluser} = require('./dal/DALUser')
+const {dalcharacter} = require('./dal/DALCharacter')
 const cookieParser = require('cookie-parser')
 const bcrypt = require('bcrypt')
 const port = 3000
