@@ -18,8 +18,32 @@ const characters = new Schema(
 const userCollection = mongoose.model('characters', characters)//WAH
 
 //NEEDS CRUD STUFF, C R
+//are you saying we need just create and read
+function addChar (name, skill, game, pic)
+{
+    userCollection.create({character: name, skill: skill, game: game, picture: pic})
+}
 
-// this is not complete it still needs some touchups to send to the database correctly
+async function seeAllChar()
+{
+    return await userCollection.find({}).exec()
+}
+
+async function findCharByName(name)
+{
+    return await userCollection.find({name}).exec()//? not too sure reaserching now
+}
+
+function updateChar()
+{
+    //is this even going to be an opion on the character page ?
+}
+
+function deleteChar()
+{
+    //
+}
+
 exports.dalcharacter = {
     add: async (character, skill, game, picture) =>{
         charactList = await findALL()
