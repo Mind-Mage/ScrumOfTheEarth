@@ -1,3 +1,4 @@
+const { fileLoader } = require('ejs')
 const{mongoose, Schema} = require('mongoose')
 const connectionString = "mongodb+srv://lvirrey:Nc210859027@toonzk.0byxsso.mongodb.net/VideoGameCharacterDatabase"//THIS
 mongoose.connect(connectionString,{useUnifiedTopology: true, useNewUrlParser: true})
@@ -7,7 +8,10 @@ connection.once('open', () =>{
 })
 const characters = new Schema(
     {
-        //hey, I was lazy and didn't set this. Can someone set the scheme up?
+        character: String,
+        skill: String,
+        game: String,
+        picture: fileLoader
     },
     {collection:'Characters'}
 )
@@ -15,6 +19,14 @@ const userCollection = mongoose.model('characters', characters)//WAH
 
 //NEEDS CRUD STUFF, C R
 
+// this is not complete it still needs some touchups to send to the database correctly
 exports.dalcharacter = {
-    //PLACE STUFF HERE
+    add: async (character, skill, game, picture) =>{
+        charactList = await findALL()
+        for(let i = 0; i < charactList.length; i++){
+            if(charactList[i].character === character) return null;
+        }
+        addCharacter(character, skill, game, picture)
+        return 1
+    }
 }
