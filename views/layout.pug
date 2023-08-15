@@ -6,9 +6,9 @@ html
         header(class="headerzk")
             nav
                 a(href='/') Home Page
-                if (user == true)
+                if user
                     a(href='/logout') Logout
-                else
+                if !user
                     a(href='/login') Login Page
                     a(href='/register') Register Page
                 a(href='/character') Characters Page
