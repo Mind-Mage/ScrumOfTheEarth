@@ -17,14 +17,14 @@ const userCollection = mongoose.model('users', users)
 function addUser(username, password){
     userCollection.create({username: username, password: password})
 }
-
+async function find(username){
+    return await userCollection.findOne({username: username}).exec()
+}
 async function findAll(){
     return await userCollection.find({}).exec()
 }
 
-//NEEDS MORE STUFF, i think?
-
-
+//this might need more stuff later, I have no clue?
 exports.daluser = {
     register: async (username, password) =>{
         userList = await findAll()
@@ -35,5 +35,8 @@ exports.daluser = {
         }
         addUser(username, password)
         return 1
+    },
+    findUser: async (username) =>{
+        return find(username)
     }
 }

@@ -16,30 +16,43 @@ app.use(cookieParser())
 
 app.get('/', (req,res) =>{
     let model = {
-        user: false //change this later with sessions, cookies, and stuff
+        user: req.session.username
     }
     res.render('home', model)
 })
 
 app.get('/login', (req,res) =>{
     let model = {
-        user: false //change this later with sessions, cookies, and stuff
+        user: req.session.username
     }
     res.render('login', model)
 })
-app.post('/login', (req,res) =>{
-    let model = {
-        user: true
+app.post('/login', async (req,res) =>{
+    const username = req.body.username
+    const password = req.body.password
+    let existingUser = await daluser.findUser(username)
+    let passwordMatch = false
+    if(existingUser){
+        passwordMatch = await bcrypt.compare(password, existingUser.password)
     }
-    res.render('login', model)//start of post for login
+    if(existingUser && passwordMatch){
+        req.session.username = username
+        res.redirect('/')
+    }else{
+        let model ={
+            user: req.session.username,
+            error:'Missing or Invalid information entered, please try again.'
+        }
+        res.render('login', model)
+    }
 })
 app.get('/register', (req,res) =>{
     res.render('register')
 })
 app.post('/register', async (req,res) =>{
     let username = req.body.username
-    let password = req.body.password
-    let confirmation = await daluser.register(username, password)
+    let encryptedPassword = await bcrypt.hash(req.body.password, 10)
+    let confirmation = await daluser.register(username, encryptedPassword)
     if(!confirmation){
         let model = {
             error: "Username has been taken"
@@ -51,13 +64,16 @@ app.post('/register', async (req,res) =>{
 })
 app.get('/character', (req,res) =>{
     let model = {
-        user: false //change this later with sessions, cookies, and stuff
+        user: req.session.username
     }
     res.render('createChar',model)
 })
 
 app.get('/createChar', (req,res) =>{
-    res.render('createChar')
+    let model = {
+        user: req.session.username
+    }
+    res.render('createChar', model)
 })
 
 app.post('/generateCharacter', (req, res) =>{
