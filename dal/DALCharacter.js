@@ -32,18 +32,9 @@ async function seeAllChar()
 
 async function findCharByName(name)
 {
-    return await userCollection.find({name}).exec()//? not too sure reaserching now
+    return await userCollection.findOne({character: name}).exec()
 }
 
-function updateChar()
-{
-    //is this even going to be an opion on the character page ?
-}
-
-function deleteChar()
-{
-    //
-}
 // We don't really need the update or delete part of the CRUD, if the person makes a mistake inputting something then they take an L
 exports.dalcharacter = {
     add: async (character, skill, game, picture) =>{
