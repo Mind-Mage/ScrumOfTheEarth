@@ -11,14 +11,15 @@ const characters = new Schema(
         character: String,
         skill: String,
         game: String,
-        picture: fileLoader
+        //picture: fileLoader this was causing an error so it's commented for now, I don't think Schema is going to accept fileloader as a type
+        picture: String
     },
     {collection:'Characters'}
 )
-const userCollection = mongoose.model('characters', characters)//WAH
+const userCollection = mongoose.model('characters', characters)
 
 //NEEDS CRUD STUFF, C R
-//are you saying we need just create and read
+//are you saying we need just create and read | yessir
 function addChar (name, skill, game, pic)
 {
     userCollection.create({character: name, skill: skill, game: game, picture: pic})
@@ -43,14 +44,17 @@ function deleteChar()
 {
     //
 }
-
+// We don't really need the update or delete part of the CRUD, if the person makes a mistake inputting something then they take an L
 exports.dalcharacter = {
     add: async (character, skill, game, picture) =>{
-        charactList = await findALL()
+        charactList = await seeAllChar()
         for(let i = 0; i < charactList.length; i++){
             if(charactList[i].character === character) return null;
         }
-        addCharacter(character, skill, game, picture)
+        addChar(character, skill, game, picture)
         return 1
+    },
+    returnAll: async () =>{
+        return seeAllChar();
     }
 }
