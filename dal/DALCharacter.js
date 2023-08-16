@@ -45,7 +45,7 @@ exports.dalcharacter = {
         addChar(character, skill, game, picture)
         return 1
     },
-    seeAllChar: async (character) =>{
+    findChar: async (character) =>{
         return findCharByName(character);
     }
 }
