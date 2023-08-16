@@ -4,9 +4,11 @@ block layout-content
         link(rel="stylesheet", href="/css/createChar")
         link(rel="stylesheet", href="css/createChar.css")
     div(class="box")
+        if error 
+            div(class = 'error')=error
         h1 Add A Character 
         form(action="/generateCharacter", method="POST", id="charForm")
-            input(class="input", type="text", name="charaterName", placeholder="Charater Name")
+            input(class="input", type="text", name="characterName", placeholder="Character Name")
             br
             input(class="input", type="text", name="specialSkill", placeholder="Special Skill")
             br
