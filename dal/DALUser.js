@@ -29,7 +29,7 @@ exports.daluser = {
     register: async (username, password) =>{
         userList = await findAll()
         for(let i = 0; i < userList.length; i++){
-            if (userList[i].username === username){
+            if (userList[i].username.toLowerCase() === username.toLowerCase()){
                 return null
             }
         }
