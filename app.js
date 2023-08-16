@@ -15,11 +15,11 @@ app.use(session(sessionConfig))
 app.use(cookieParser())
 
 app.get('/', async (req,res) =>{
-    let characterList = await dalcharacter.returnAll()
-    console.log(characterList)//takes all the characters from the database and puts it into characterList.
+    //let characterList = await dalcharacter.returnAll()
+    //console.log(characterList)//takes all the characters from the database and puts it into characterList.
     let model = {
         user: req.session.username,
-        characterList: characterList//nothing in the home.pug uses this yet so it's just sending this to nowhere
+        //characterList: characterList//nothing in the home.pug uses this yet so it's just sending this to nowhere
     }
     res.render('home', model)
 })
@@ -79,11 +79,22 @@ app.get('/createChar', (req,res) =>{
     res.render('createChar', model)
 })
 
-app.post('/generateCharacter', (req, res) =>{
-    res.redirect('/');
+app.post('/generateCharacter', async (req, res) =>{
     console.log("Your Character was added!");
-    // add an if statement later so that if the character is already in the database it redirects
-    // them to the createChar page to add another character
+    let characterName = req.body.characterName
+    let characterSkill = req.body.specialSkill
+    let characterGame = req.body.gameName
+    let characterPicture = req.body.pictureUpload
+    let confirmation = await dalcharacter.add(characterName, characterSkill, characterGame, characterPicture)
+    if(!confirmation){
+        let model ={
+            error: "A problem occured while creating character. The character you might be trying to make might already be in the Database"
+        }
+        res.render('createChar', model)
+    }else{
+        console.log(characterName + " was added")
+        res.redirect('/')
+    }
 })
 app.get('/logout', (req,res) =>{
     req.session.destroy()

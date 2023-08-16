@@ -40,7 +40,9 @@ exports.dalcharacter = {
     add: async (character, skill, game, picture) =>{
         charactList = await seeAllChar()
         for(let i = 0; i < charactList.length; i++){
-            if(charactList[i].character === character) return null;
+            if(charactList[i].character === character){
+                return null
+            } 
         }
         addChar(character, skill, game, picture)
         return 1
