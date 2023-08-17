@@ -14,6 +14,11 @@ block layout-content
             br
             input(class="input", type="text", name="gameName", placeholder="Name of Game")
             br
-            input(id="file", type="file", name="pictureUpload")
+            //input(id="file", type="file", name="pictureUpload") 
+            //Unfortunately, the browser doesn't allow us to see the filepath of an image so all we see is the name and 
+            //not where it is in the computer so that we can download it. 
+            input(class="input", type="text", name="pictureUpload", placeholder="Copied Link to an Image")
+            //the only way to show images is if we upload it to a database that can actually hold larger file sizes
+            //or just have the user copy an image link from the internet.
             br
             input(id="submit", type="submit", name="submit", value="Add")

@@ -4,6 +4,7 @@ const {daluser} = require('./dal/DALUser')
 const {dalcharacter} = require('./dal/DALCharacter')
 const cookieParser = require('cookie-parser')
 const bcrypt = require('bcrypt')
+const fs = require("fs")
 const port = 3000
 app = express()
 app.set("view engine", "pug")
@@ -15,11 +16,14 @@ app.use(session(sessionConfig))
 app.use(cookieParser())
 
 app.get('/', async (req,res) =>{
-    //let characterList = await dalcharacter.returnAll()
-    //console.log(characterList)//takes all the characters from the database and puts it into characterList.
+    let characterList = await dalcharacter.returnAll()
+    console.log(characterList)//takes all the characters from the database and puts it into characterList.
+    // characterList.forEach(element => {
+    //     fs.writeFileSync("picture"+element.characterName,element.picture)
+    // });
     let model = {
         user: req.session.username,
-        //characterList: characterList//nothing in the home.pug uses this yet so it's just sending this to nowhere
+        characterList: characterList
     }
     res.render('home', model)
 })
@@ -85,6 +89,8 @@ app.post('/generateCharacter', async (req, res) =>{
     let characterSkill = req.body.specialSkill
     let characterGame = req.body.gameName
     let characterPicture = req.body.pictureUpload
+    //const base64 = fs.readFileSync(characterPicture, "base64")
+    //const buffer = Buffer.from(base64, "base64") this would work if we had access to the files path but browsers don't allow this so we just get a string of characters and .jpg at the end
     let confirmation = await dalcharacter.add(characterName, characterSkill, characterGame, characterPicture)
     if(!confirmation){
         let model ={

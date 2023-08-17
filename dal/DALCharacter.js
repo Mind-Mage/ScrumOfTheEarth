@@ -12,7 +12,7 @@ const characters = new Schema(
         skill: String,
         game: String,
         //picture: fileLoader this was causing an error so it's commented for now, I don't think Schema is going to accept fileloader as a type
-        picture: String
+        picture: String,
     },
     {collection:'Characters'}
 )
@@ -49,5 +49,8 @@ exports.dalcharacter = {
     },
     findChar: async (character) =>{
         return findCharByName(character);
+    },
+    returnAll: async () =>{
+        return seeAllChar()
     }
 }
