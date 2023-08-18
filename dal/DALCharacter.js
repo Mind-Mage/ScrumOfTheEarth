@@ -18,8 +18,6 @@ const characters = new Schema(
 )
 const userCollection = mongoose.model('characters', characters)
 
-//NEEDS CRUD STUFF, C R
-//are you saying we need just create and read | yessir
 function addChar (name, skill, game, pic)
 {
     userCollection.create({character: name, skill: skill, game: game, picture: pic})
@@ -35,7 +33,6 @@ async function findCharByName(name)
     return await userCollection.findOne({character: name}).exec()
 }
 
-// We don't really need the update or delete part of the CRUD, if the person makes a mistake inputting something then they take an L
 exports.dalcharacter = {
     add: async (character, skill, game, picture) =>{
         charactList = await seeAllChar()

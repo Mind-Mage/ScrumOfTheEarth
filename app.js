@@ -20,7 +20,7 @@ app.get('/', async (req,res) =>{
     console.log(characterList)//takes all the characters from the database and puts it into characterList.
     // characterList.forEach(element => {
     //     fs.writeFileSync("picture"+element.characterName,element.picture)
-    // });
+    // }); This was for taking Buffer images from the Database, but it didn't work
     let model = {
         user: req.session.username,
         characterList: characterList
