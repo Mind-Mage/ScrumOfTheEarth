@@ -6,6 +6,17 @@ body{
     margin: 0;
     padding: 0;
 }
+.characters{
+    border-radius: 20px;
+    display: flex;
+    border: solid;
+    text-align: center;
+    margin: 0 10% 0 10%;
+}
+.characterImg{
+    width: 25%;
+    height: 25%;
+}
 .footer{
     background-color: #b17629dd;
     border-radius: 20px;
