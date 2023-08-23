@@ -1,12 +1,20 @@
-.footerzk{/*holder for presentation*/
-    background-color: whitesmoke;
+body{
+    background-color: #d1681ced;
+    font-family: 'Games', sans-serif;
+    font-size: 16px;
+    color: #8e0707;
+    margin: 0;
+    padding: 0;
+}
+.footer{
+    background-color: #b17629dd;
     border-radius: 20px;
     display: block;
     border: solid;
     text-align: center;
     margin: 10% 15% 0% 15%;
 }
-.box{/*holder for presentation*/
+.box{
     background-color: whitesmoke;
     border-radius: 20px;
     display: block;
@@ -15,7 +23,7 @@
     padding: .5%;
     margin: 0% 15% 15% 15%;
 }
-.headerzk{/*holder for presentation*/
+.header{
     background-color: whitesmoke;
     border-radius: 20px;
     display: block;
@@ -23,22 +31,27 @@
     text-align: center;
     margin: 0% 15% 15% 15%;
 }
-a{
-    background-color: whitesmoke;
+
+li a{
+    display: inline-block;
+    padding: 3px;
+    margin: 3px;
+
+}
+
+li a:hover{
+    background-color: #9e1717;
+    color: #8b4d0add;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #b17629dd;
     border-radius: 20px;
-    border: solid;
-    text-align: center;
-    margin: .5%;
-    padding: .1%;
 }
-.a{ /*delete this if you want to change it, this is just holder stuff for now*/
-    /*background-color: whitesmoke;*/
-    /*border-radius: 20px;
-    border: solid;*/
-    text-align: center;
-    padding: 5%;
-    margin: 2%;
-}
+
 .error{ /*Making error message red*/
     color: red;
 }

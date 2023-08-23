@@ -1,12 +1,12 @@
 body{
-    background-color: white;
+    background-color:#8b4d0add;
+    font-family: 'Games', sans-serif;
+    font-size: 16px;
+    color: #9e1717;
+    margin: 0;
+    padding: 0;
     color: rgb(35,31,32);
     text-align: center;
-}
-
-footer {
-    position: absolute;
-    bottom: 0;
 }
 
 .input {
