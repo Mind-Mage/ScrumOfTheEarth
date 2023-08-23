@@ -1,0 +1,27 @@
+body{
+    background-color: #d1681ced;
+    font-family: 'Games', sans-serif;
+    font-size: 16px;
+    color: #8e0707;
+    margin: 0;
+    padding: 0;
+}
+
+li a{
+    display: inline-block;
+    padding: 3px;
+    margin: 3px;
+}
+
+li a:hover{
+    background-color: #8e0707;
+    color: #e26912ed;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #e6751fed;
+}
