@@ -6,5 +6,8 @@ block layout-content
             if(characterList.length > 0)
                 each character in characterList 
                     div(class='characters') <!--make css later-->
-                        div(class="characterDisplay")='Character: ' + character.character + ' Skill: ' + character.skill + ' Game: ' + character.game + ' Image: '
+                        div(class="characterDisplay")=' Character: ' + character.character + " "
+                        div(class="characterDisplay")=' Skill: ' + character.skill + " "
+                        div(class="characterDisplay")=' Game: ' + character.game + " "
+                        div(class="characterDisplay")=' Image: '
                         img(src=character.picture class="characterImg")

@@ -13,6 +13,11 @@ body{
     text-align: center;
     margin: 0 10% 0 10%;
 }
+.characterDisplay{
+    display: flex;
+    text-align: center;
+    margin: 10;
+}
 .characterImg{
     width: 25%;
     height: 25%;
