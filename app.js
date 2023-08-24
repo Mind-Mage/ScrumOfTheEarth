@@ -17,7 +17,7 @@ app.use(cookieParser())
 
 app.get('/', async (req,res) =>{
     let characterList = await dalcharacter.returnAll()
-    console.log(characterList)//takes all the characters from the database and puts it into characterList.
+    //console.log(characterList)//takes all the characters from the database and puts it into characterList.
     // characterList.forEach(element => {
     //     fs.writeFileSync("picture"+element.characterName,element.picture)
     // }); This was for taking Buffer images from the Database, but it didn't work
