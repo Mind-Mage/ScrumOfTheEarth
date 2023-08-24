@@ -58,7 +58,20 @@ app.get('/register', (req,res) =>{
 })
 app.post('/register', async (req,res) =>{
     let username = req.body.username
-    let encryptedPassword = await bcrypt.hash(req.body.password, 10)
+    let password = req.body.password
+    let encryptedPassword = await bcrypt.hash(password, 10)
+    if(password.length <= 8){
+        let model = {
+            error: "Password must be 8 characters or more"
+        }
+        res.render('register', model)
+    }
+    if(username.includes(" ")){
+        let model = {
+            error: "Name cannot include spaces"
+        }
+        res.render('register', model)
+    }
     let confirmation = await daluser.register(username, encryptedPassword)
     if(!confirmation){
         let model = {
@@ -89,6 +102,12 @@ app.post('/generateCharacter', async (req, res) =>{
     let characterSkill = req.body.specialSkill
     let characterGame = req.body.gameName
     let characterPicture = req.body.pictureUpload
+    if(characterName.length <= 0 && characterSkill.length <= 0 && characterGame.length <= 0 && characterPicture <= 0){
+        let model ={
+            error: "Fields must have something"
+        }
+        res.render('createChar', model)
+    }
     //const base64 = fs.readFileSync(characterPicture, "base64")
     //const buffer = Buffer.from(base64, "base64") this would work if we had access to the files path but browsers don't allow this so we just get a string of characters and .jpg at the end
     let confirmation = await dalcharacter.add(characterName, characterSkill, characterGame, characterPicture)
