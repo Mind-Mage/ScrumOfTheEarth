@@ -88,12 +88,10 @@ nav a:hover{
 }
 
 
-.characters{
+/* .characters{
     position: relative;
-    display: inline-block;
-
-
-}
+    display: inline-block; This broke stuff, so I disabled it   
+} */ 
 
 
 li a{
