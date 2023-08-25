@@ -3,7 +3,7 @@ block layout-content
     div(class="box")
         h1 Video Game Charaters Home Page
         h2 These are all of your charaters!
-        div(class='characters') <!--make css later-->
+        div(class="characters") <!--make css later-->
             if(characterList.length > 0)
                 each character in characterList 
                     div(class="characterDisplay")='Character: ' + character.character + ' Skill: ' + character.skill + ' Game: ' + character.game + ' Image: '

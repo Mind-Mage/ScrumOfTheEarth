@@ -4,11 +4,11 @@ block layout-content
         h2 Register 
         if error 
             div(class='error')=error
-        form(action="/register" method="POST")
+        form(action="/register" method="POST", id="registerForm")
             label Username:
             input(type="text" name="username" placeholder="Username" required value=username)
             br
             label Password:
             input(type="password" name="password" placeholder="Password" required value=password)
             br
-            input(type="submit" value="register")
+            input(id="submit", type="submit" value="register")

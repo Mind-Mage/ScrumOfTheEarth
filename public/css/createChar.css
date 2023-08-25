@@ -1,12 +1,15 @@
 body{
-    background-color: white;
+    background-color: #086bbcdd;
+    font-family: 'Games', sans-serif;
     color: rgb(35,31,32);
     text-align: center;
 }
 
 footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
+    color: rgb(147, 8, 31);
+    
 }
 
 .input {
@@ -16,11 +19,14 @@ footer {
 }
 
 #file {
-    height: 20px;
-    width: 200px;
+    /* height: 20px;
+    width: 200px; */
+    
 }
 
 #submit {
     height: 20px;
     width: 100px;
+    color: rgb(181, 40, 90);
+    background-color: rgb(0, 0, 0);
 }

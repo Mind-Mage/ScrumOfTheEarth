@@ -4,11 +4,11 @@ block layout-content
         h2 Login 
         if error 
             div(class='error')=error
-        form(action="/login" method="POST")
+        form(action="/login" method="POST", id="loginForm")
             label Username:
             input(type="text" name="username" placeholder="Username" required value=username)
             br
             label Password:
             input(type="password" name="password" placeholder="Password" required value=password)
             br
-            input(type="submit" value="login")
+            input(id="submit", type="submit" value="login")

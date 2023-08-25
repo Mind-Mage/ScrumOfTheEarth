@@ -1,44 +1,67 @@
-.footerzk{/*holder for presentation*/
-    background-color: whitesmoke;
-    border-radius: 20px;
-    display: block;
-    border: solid;
+body{
+    background-color: #086bbcdd;
+    font-family: 'Games', sans-serif;
+    color: rgb(35,31,32);
     text-align: center;
-    margin: 10% 15% 0% 15%;
+}
+
+.footerzk{/*holder for presentation*/
+
+    position: fixed;
+    bottom: 0;
+    color: rgb(147, 8, 31);
 }
 .box{/*holder for presentation*/
-    background-color: whitesmoke;
+    background-color: rgb(42, 54, 164);
     border-radius: 20px;
     display: block;
     border: solid;
     text-align: center;
+    color: rgb(186, 29, 136);
     padding: .5%;
     margin: 0% 15% 15% 15%;
 }
 .headerzk{/*holder for presentation*/
-    background-color: whitesmoke;
-    border-radius: 20px;
     display: block;
-    border: solid;
+    /* border: solid; */
     text-align: center;
     margin: 0% 15% 15% 15%;
 }
 a{
-    background-color: whitesmoke;
-    border-radius: 20px;
+    background-color: rgb(181, 40, 90);
+    color: rgb(22, 16, 69);
+    /* border-radius: 100px; */
     border: solid;
     text-align: center;
     margin: .5%;
     padding: .1%;
 }
-.a{ /*delete this if you want to change it, this is just holder stuff for now*/
-    /*background-color: whitesmoke;*/
-    /*border-radius: 20px;
-    border: solid;*/
-    text-align: center;
-    padding: 5%;
-    margin: 2%;
+
+#submit {
+    height: 20px;
+    width: 100px;
+    
+    color: rgb(181, 40, 90);
+    background-color: rgb(0, 0, 0);
 }
+
+nav a:hover{
+    background-color: rgb(27, 193, 243);
+    /* border-radius: 100px; */
+    border: solid;
+    text-align: center;
+    margin: .5%;
+    padding: .1%;
+}
+
+
+.characters{
+    position: relative;
+    display: inline-block;
+
+
+}
+
 .error{ /*Making error message red*/
     color: red;
 }
