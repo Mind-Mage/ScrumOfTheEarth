@@ -4,7 +4,13 @@ block layout-content
         h1 Video Game Charaters Home Page
         h2 These are all of your charaters!
         div(class="characters") <!--make css later-->
+        h1 Video Game Characters Home Page
+        h2 These are all of your characters!
             if(characterList.length > 0)
                 each character in characterList 
-                    div(class="characterDisplay")='Character: ' + character.character + ' Skill: ' + character.skill + ' Game: ' + character.game + ' Image: '
-                    img(src=character.picture)
+                    div(class='characters') <!--make css later-->
+                        div(class="characterDisplay")=' Character: ' + character.character + " "
+                        div(class="characterDisplay")=' Skill: ' + character.skill + " "
+                        div(class="characterDisplay")=' Game: ' + character.game + " "
+                        div(class="characterDisplay")=' Image: '
+                        img(src=character.picture class="characterImg")

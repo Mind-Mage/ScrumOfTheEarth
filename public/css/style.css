@@ -2,6 +2,34 @@ body{
     background-color: #086bbcdd;
     font-family: 'Games', sans-serif;
     color: rgb(35,31,32);
+    background-color: #d1681ced;
+    font-family: 'Games', sans-serif;
+    font-size: 16px;
+    color: #8e0707;
+    margin: 0;
+    padding: 0;
+}
+.characters{
+    border-radius: 20px;
+    display: flex;
+    border: solid;
+    text-align: center;
+    margin: 0 10% 0 10%;
+}
+.characterDisplay{
+    display: flex;
+    text-align: center;
+    margin: 10;
+}
+.characterImg{
+    width: 25%;
+    height: 25%;
+}
+.footer{
+    background-color: #b17629dd;
+    border-radius: 20px;
+    display: block;
+    border: solid;
     text-align: center;
 }
 
@@ -13,6 +41,8 @@ body{
 }
 .box{/*holder for presentation*/
     background-color: rgb(42, 54, 164);
+.box{
+    background-color: whitesmoke;
     border-radius: 20px;
     display: block;
     border: solid;
@@ -22,6 +52,9 @@ body{
     margin: 0% 15% 15% 15%;
 }
 .headerzk{/*holder for presentation*/
+.header{
+    background-color: whitesmoke;
+    border-radius: 20px;
     display: block;
     /* border: solid; */
     text-align: center;
@@ -60,6 +93,27 @@ nav a:hover{
     display: inline-block;
 
 
+}
+
+
+li a{
+    display: inline-block;
+    padding: 3px;
+    margin: 3px;
+
+}
+
+li a:hover{
+    background-color: #9e1717;
+    color: #8b4d0add;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #b17629dd;
+    border-radius: 20px;
 }
 
 .error{ /*Making error message red*/
