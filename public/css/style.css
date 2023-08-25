@@ -8,6 +8,7 @@ body{
     color: #8e0707;
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 .characters{
     border-radius: 20px;
