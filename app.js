@@ -89,29 +89,23 @@ app.get('/character', (req,res) =>{
     res.render('createChar',model)
 })
 
-app.get('/createChar', (req,res) =>{
-    let model = {
-        user: req.session.username
-    }
-    res.render('createChar', model)
-})
-
 app.post('/generateCharacter', async (req, res) =>{
-    console.log("Your Character was added!");
     let characterName = req.body.characterName
     let characterSkill = req.body.specialSkill
     let characterGame = req.body.gameName
     let characterPicture = req.body.pictureUpload
     if(characterName.length <= 0 && characterSkill.length <= 0 && characterGame.length <= 0 && characterPicture <= 0){
         let model ={
-            error: "Fields must have something"
+            error: "Fields must contain info"
         }
         res.render('createChar', model)
+        return
     }
     //const base64 = fs.readFileSync(characterPicture, "base64")
     //const buffer = Buffer.from(base64, "base64") this would work if we had access to the files path but browsers don't allow this so we just get a string of characters and .jpg at the end
     let confirmation = await dalcharacter.add(characterName, characterSkill, characterGame, characterPicture)
     if(!confirmation){
+        console.log("Your Character was added!");
         let model ={
             error: "A problem occured while creating character. The character you might be trying to make might already be in the Database"
         }
