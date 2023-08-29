@@ -65,12 +65,14 @@ app.post('/register', async (req,res) =>{
             error: "Password must be 8 characters or more"
         }
         res.render('register', model)
+        return
     }
     if(username.includes(" ")){
         let model = {
             error: "Name cannot include spaces"
         }
         res.render('register', model)
+        return
     }
     let confirmation = await daluser.register(username, encryptedPassword)
     if(!confirmation){
@@ -78,6 +80,7 @@ app.post('/register', async (req,res) =>{
             error: "Username has been taken"
         }
         res.render('register', model)
+        return
     }else{
         res.redirect('/login')
     }
@@ -110,6 +113,7 @@ app.post('/generateCharacter', async (req, res) =>{
             error: "A problem occured while creating character. The character you might be trying to make might already be in the Database"
         }
         res.render('createChar', model)
+        return
     }else{
         console.log(characterName + " was added")
         res.redirect('/')
