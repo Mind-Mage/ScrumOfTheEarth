@@ -1,5 +1,5 @@
 const{mongoose, Schema} = require('mongoose')
-const connectionString = "mongodb+srv://lvirrey:Nc210859027@toonzk.0byxsso.mongodb.net/VideoGameCharacterDatabase"//THIS
+const connectionString = "nothing"//I turned off my cluster -ZK
 mongoose.connect(connectionString,{useUnifiedTopology: true, useNewUrlParser: true})
 const connection = mongoose.connection
 //connection to the database

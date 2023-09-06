@@ -1,6 +1,6 @@
 const { fileLoader } = require('ejs')
 const{mongoose, Schema} = require('mongoose')
-const connectionString = "mongodb+srv://lvirrey:Nc210859027@toonzk.0byxsso.mongodb.net/VideoGameCharacterDatabase"//THIS
+const connectionString = "Nothing"//Turned off my cluster - ZK
 mongoose.connect(connectionString,{useUnifiedTopology: true, useNewUrlParser: true})
 const connection = mongoose.connection
 connection.once('open', () =>{
